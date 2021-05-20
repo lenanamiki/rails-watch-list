@@ -1,3 +1,12 @@
 show.html.erb
 
 <%= @list.name %>
+
+<% @list.bookmarks.each do |b| %>
+<%= b.comment %>
+
+<%= link_to bookmark_path, method: :delete, data: { confirm: 'Delete this bookmark?' } do %>
+<i class="fas fa-trash-alt"></i>
+<% end %>
+
+<% end %>
