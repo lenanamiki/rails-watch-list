@@ -1,12 +1,28 @@
-show.html.erb
+<div class="container">
+  <div class="container-title">
+    <h5 class="title">LIST > <%= @list.name.upcase %></h5>
+    <div>
+      <%= link_to new_list_bookmark_path(@list.id), class: "nav-link" do %>
+      <div class="d-inline"><i class="far fa-bookmark"></i></div>
+      <div class="d-inline fs-4 ml-1">NEW BOOKMARK</div>
+      <% end %>
+    </div>
+  </div>
 
-<%= @list.name %>
+  <h5>YOUR BOOKMARKS</h5>
+  <div class="container-list" >
+    <% @list.bookmarks.each do |b| %>
+    <div class="card-movie">
+      <%= image_tag "https://image.tmdb.org/t/p/w500#{b.movie.poster_url}", alt: "movie poster", class: "poster-img" %>
+      <div>
+        <p><strong><%= b.movie.title %></strong></p>
+        <p><%= b.comment %></p>
+        <%= link_to bookmark_path(b), method: :delete, data: { confirm: 'Delete this bookmark?' } do %>
+        <i class="fas fa-trash-alt trashbox"></i>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
 
-<% @list.bookmarks.each do |b| %>
-<%= b.comment %>
-
-<%= link_to bookmark_path, method: :delete, data: { confirm: 'Delete this bookmark?' } do %>
-<i class="fas fa-trash-alt"></i>
-<% end %>
-
-<% end %>
