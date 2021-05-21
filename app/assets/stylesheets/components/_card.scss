@@ -1,15 +1,32 @@
 .card-list {
-  flex-grow: 1;
-  width: 256px;
-  height: 160px;
-  border: 1px solid black;
+  width: 280px;
+  height: 280px;
+  border-radius: 8px;
   margin: 4px;
-  text-align: center;
+    .list-title {
+      color: $white;
+      text-decoration: none;
+      line-height: 280px;
+      text-align: center;
+      font-size: 28px;
+    }
 }
 
 .card-movie {
-  width: 240px;
-  border: 1px solid black;
+  width: 280px;
+  height: 360px;
+  border-radius: 8px;
   margin: 4px;
   text-align: center;
+  position: relative;
+}
+
+.card-movie-absolute {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+    .trashbox {
+      color: $white;
+      font-size: 24px;
+    }
 }

@@ -1,8 +1,17 @@
 .button-red {
   display: inline-block;
-  background-color: #D2232A;
+  background-color: $red;
   color: $white;
   margin-top: 12px;
   padding: 8px 16px;
   border-radius: 8px;
+  border: 1px solid $red;
+  text-decoration: none;
+}
+
+.button-red:hover {
+  color: $red;
+  background-color: $white;
+  border: 1px solid $white;
+  text-decoration: none;
 }
