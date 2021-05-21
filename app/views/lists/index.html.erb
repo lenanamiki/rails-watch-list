@@ -4,8 +4,7 @@
   </div>
   <div class="container-list" >
         <% @lists.each do |list| %>
-        <div class="card-list" >
-          <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
+        <div class="card-list" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_path('http://placehold.jp/400x300.png') %>)">
           <%= link_to list_path(list) do %>
           <%= list.name %>
           <% end %>
