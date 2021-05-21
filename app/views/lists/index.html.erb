@@ -4,7 +4,8 @@
   </div>
   <div class="container-list" >
         <% @lists.each do |list| %>
-        <div class="card-list" style="background-image: url(<%= "https://unsplash.com/s/photos/#{list.name}" %>);">
+        <div class="card-list">
+          <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
           <%= link_to list_path(list) do %>
           <%= list.name %>
           <% end %>

@@ -3,6 +3,7 @@
     <h5>ADD A NEW LIST</h5>
     <%= simple_form_for @list do |f| %>
     <%= f.input :name %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit 'Create List' %>
     <% end %>
   </div>
