@@ -3,13 +3,9 @@
   height: 280px;
   border-radius: 8px;
   margin: 4px;
-    .list-title {
-      color: $white;
-      text-decoration: none;
-      line-height: 280px;
-      text-align: center;
-      font-size: 28px;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-movie {
