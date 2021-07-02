@@ -11,6 +11,9 @@
       <%= link_to '', new_list_bookmark_path(@list.id), class: "bookmark-link" %>
     </div>
   </div>
+  <%= link_to list_path(@list), method: :delete, data: { confirm: 'Delete this list?' } do %>
+    <i class="fas fa-trash-alt trashbox"></i>
+  <% end %>
   <div class="container">
     <h4 class="title">BOOKMARKED MOVIES</h4>
     <div class="row">
