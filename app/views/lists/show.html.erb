@@ -4,9 +4,9 @@
   <div class="list-header">
     <h2 class="title"><%= @list.name.upcase %></h2>
     <div class="bookmark">
-      <div>
+      <div class="button-red">
         <div class="d-inline"><i class="far fa-bookmark"></i></div>
-        <div class="d-inline fs-4 ml-1">BOOKMARK A MOVIE</div>
+        <div class="d-inline fs-4 ml-1">ADD A MOVIE</div>
       </div>
       <%= link_to '', new_list_bookmark_path(@list.id), class: "bookmark-link" %>
     </div>
