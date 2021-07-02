@@ -12,10 +12,9 @@
       <div class="col-md-12 col-lg-4 col-xl-3">
         <div class="card-list" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_path('http://placehold.jp/400x300.png') %>)">
           <div class="list-details">
-            <%= link_to list_path(list) do %>
-              <p><%= list.name %></p>
-            <% end %>
+            <p><%= list.name %></p>
           </div>
+          <%= link_to '', list_path(list), class: 'list-link' %>
         </div>
       </div>
     <% end %>
