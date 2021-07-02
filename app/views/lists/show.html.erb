@@ -11,37 +11,37 @@
       <%= link_to '', new_list_bookmark_path(@list.id), class: "bookmark-link" %>
     </div>
   </div>
-  <div class="container">
-    <h4 class="title">BOOKMARKED MOVIES</h4>
-    <div class="row">
-      <% @list.bookmarks.each do |b| %>
-        <div class="col-md-12 col-lg-4 col-xl-3">
-          <div class="card-movie" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= "https://image.tmdb.org/t/p/w500#{b.movie.poster_url}" %>)">
-            <div class="card-movie-absolute">
-              <%= link_to bookmark_path(b), method: :delete, data: { confirm: 'Delete this bookmark?' } do %>
-                <i class="fas fa-trash-alt trashbox"></i>
-              <% end %>
+</div>
+<div class="container">
+  <h4 class="title">BOOKMARKED MOVIES</h4>
+  <div class="row">
+    <% @list.bookmarks.each do |b| %>
+      <div class="col-md-12 col-lg-4 col-xl-3">
+        <div class="card-movie" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= "https://image.tmdb.org/t/p/w500#{b.movie.poster_url}" %>)">
+          <div class="card-movie-absolute">
+            <%= link_to bookmark_path(b), method: :delete, data: { confirm: 'Delete this bookmark?' } do %>
+              <i class="fas fa-trash-alt trashbox"></i>
+            <% end %>
+          </div>
+          <div class="movie-title">
+            <p><strong><%= b.movie.title %></strong><br>
             </div>
-            <div class="movie-title">
-              <p><strong><%= b.movie.title %></strong><br>
-              </div>
-            </div>
-            <div class="movie-details">
-              <p>Rating: <%= b.movie.rating %></p>
-              <p><%= b.movie.overview %></p>
-              <p>"<%= b.comment %>"</p>
-            </div>
-          <% end %>
+          </div>
+          <div class="movie-details">
+            <p>Rating: <%= b.movie.rating %></p>
+            <p><%= b.movie.overview %></p>
+            <p>"<%= b.comment %>"</p>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
-  <div class="container">
-    <div class="footer">
-      <div class="delete-list">
-        <i class="fas fa-trash-alt trashbox"></i> DELETE LIST
-        <%= link_to '', list_path(@list), method: :delete, data: { confirm: 'Delete this list?' }, class: 'delete-link' %>
-      </div>
+</div>
+<div class="container">
+  <div class="footer">
+    <div class="delete-list">
+      <i class="fas fa-trash-alt trashbox"></i> DELETE LIST
+      <%= link_to '', list_path(@list), method: :delete, data: { confirm: 'Delete this list?' }, class: 'delete-link' %>
     </div>
   </div>
 </div>
