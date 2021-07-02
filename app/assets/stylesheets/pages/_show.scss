@@ -13,9 +13,9 @@
 .list-header {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  margin-top: 64px;
+  margin-top: 32px;
 }
 
 .bookmark {
@@ -44,4 +44,11 @@
   left: 0;
   bottom: 0;
   width: 100%;
+}
+
+.banner-title {
+  color: $white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 64px;
+  text-align: center;
 }

@@ -2,14 +2,14 @@
   justify-content: space-between;
   background: #FFF8F0;
   position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
-  position: sticky;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
-  position: sticky;
 }
