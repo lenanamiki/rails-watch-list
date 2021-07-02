@@ -52,3 +52,12 @@
   font-size: 64px;
   text-align: center;
 }
+
+@media screen and (max-width: 768px) {
+  .banner {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
