@@ -1,6 +1,31 @@
-.movie-details {
+.movie-title {
   color: $white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 24px;
 }
 
+.movie-details {
+  color: $black;
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+.list-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 64px;
+}
+
+.bookmark {
+  position: relative;
+}
+
+.bookmark-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}

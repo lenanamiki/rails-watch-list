@@ -1,31 +1,37 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : image_path('https://s3-us-west-2.amazonaws.com/flx-editorial-wordpress/wp-content/uploads/2018/03/13153742/RT_300EssentialMovies_700X250.jpg') %>">
 </div>
-
 <div class="container">
-  <div class="container-title">
-    <h2 class="title"><%= @list.name.upcase %> MOVIES</h2>
-    <div>
-      <%= link_to new_list_bookmark_path(@list.id), class: "nav-link" do %>
-      <div class="d-inline"><i class="far fa-bookmark"></i></div>
-      <div class="d-inline fs-4 ml-1">NEW BOOKMARK</div>
-      <% end %>
+  <div class="list-header">
+    <h2 class="title"><%= @list.name.upcase %></h2>
+    <div class="bookmark">
+      <div>
+        <div class="d-inline"><i class="far fa-bookmark"></i></div>
+        <div class="d-inline fs-4 ml-1">BOOKMARK A MOVIE</div>
+      </div>
+      <%= link_to '', new_list_bookmark_path(@list.id), class: "bookmark-link" %>
     </div>
   </div>
-
-  <h5>YOUR BOOKMARKS</h5>
-  <div class="container-list" >
-    <% @list.bookmarks.each do |b| %>
-    <div class="card-movie" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= "https://image.tmdb.org/t/p/w500#{b.movie.poster_url}" %>)">
-      <div class="card-movie-absolute">
-        <%= link_to bookmark_path(b), method: :delete, data: { confirm: 'Delete this bookmark?' } do %>
-        <i class="fas fa-trash-alt trashbox"></i>
-        <% end %>
-      </div>
-      <div class="movie-details">
-        <p><strong><%= b.movie.title %></strong><br><%= b.comment %></p>
+  <div class="container">
+    <h4 class="title">BOOKMARKED MOVIES</h4>
+    <div class="row">
+      <% @list.bookmarks.each do |b| %>
+        <div class="col-md-12 col-lg-4 col-xl-3">
+          <div class="card-movie" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= "https://image.tmdb.org/t/p/w500#{b.movie.poster_url}" %>)">
+            <div class="card-movie-absolute">
+              <%= link_to bookmark_path(b), method: :delete, data: { confirm: 'Delete this bookmark?' } do %>
+                <i class="fas fa-trash-alt trashbox"></i>
+              <% end %>
+            </div>
+            <div class="movie-title">
+              <p><strong><%= b.movie.title %></strong><br>
+              </div>
+            </div>
+            <div class="movie-details">
+              <p>Rating: <%= b.movie.rating %></p>
+              <p><%= b.movie.overview %></p>
+              <p>"<%= b.comment %>"</p>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
-    <% end %>
-  </div>
-</div>
-
