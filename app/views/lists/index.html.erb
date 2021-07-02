@@ -1,28 +1,23 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://s3-us-west-2.amazonaws.com/flx-editorial-wordpress/wp-content/uploads/2018/03/13153742/RT_300EssentialMovies_700X250.jpg);">
   <div class="container">
     <h1>MOVIE WATCH LIST</h1>
+    <p>Save your favorite movies in your own unique list.</p>
     <%= link_to "Create New List", new_list_path, class: "button-red" %>
   </div>
 </div>
-
 <div class="container">
-  <div class="container-title">
-    <h4 class="title">YOUR LISTS</h4>
-  </div>
-  <div class="container-list" >
-        <% @lists.each do |list| %>
+  <h4 class="title">ALL LISTS</h4>
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="col-md-12 col-lg-4 col-xl-3">
         <div class="card-list" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_path('http://placehold.jp/400x300.png') %>)">
-            <div class="list-details">
-              <%= link_to list_path(list) do %>
-              <%= list.name %>
-              <% end %>
-            </div>
+          <div class="list-details">
+            <%= link_to list_path(list) do %>
+              <p><%= list.name %></p>
+            <% end %>
+          </div>
         </div>
-        <% end %>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
-
-
-
